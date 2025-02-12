@@ -78,9 +78,9 @@ export default defineConfig({
   // },
 
   webServer: {
-    command: "npm run start", // Start the Next.js server
-    url: "http://localhost:3000", // Ensure this matches your app's URL
-    timeout: 300000, // Wait up to 2 minutes for the server to be ready
-    reuseExistingServer: !process.env.CI, // Avoid restarting locally
+    command: "npm run start",
+    url: "http://localhost:3000",
+    reuseExistingServer: true, // ✅ Prevents starting a new server if one is already running
+    timeout: 60 * 1000, // 60s timeout
   },
 });
