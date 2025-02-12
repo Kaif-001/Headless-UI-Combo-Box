@@ -11,7 +11,7 @@ import React from "react";
 const DialogOverlay = React.forwardRef<
   React.ElementRef<typeof DialogOverlayComponent>,
   React.ComponentPropsWithoutRef<typeof DialogOverlayComponent>
->(({ className, ...props }, ref) => (
+>(({ ...props }, ref) => (
   <DialogOverlayComponent
     ref={ref}
     className={clsx(

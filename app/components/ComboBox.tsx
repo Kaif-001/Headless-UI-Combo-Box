@@ -20,7 +20,9 @@ const people = [
 
 export default function ComboBox() {
   const [query, setQuery] = useState("");
-  const [selected, setSelected] = useState(people[1]);
+  const [selected, setSelected] = useState<{ id: number; name: string } | null>(
+    people[1]
+  );
 
   const filteredPeople =
     query === ""
@@ -43,7 +45,9 @@ export default function ComboBox() {
               "w-full rounded-lg border-none bg-white/5 py-1.5 pr-8 pl-3 text-sm/6 text-black",
               "focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25"
             )}
-            displayValue={(person) => person?.name}
+            displayValue={(person: { id: number; name: string } | null) =>
+              person?.name ?? ""
+            }
             onChange={(event) => setQuery(event.target.value)}
           />
           <ComboboxButton className="group absolute inset-y-0 right-0 px-2.5">
