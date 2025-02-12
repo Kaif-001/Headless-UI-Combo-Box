@@ -17,7 +17,7 @@ export const ComboBoxInModal = () => {
         Open Modal
       </button>
       <Modal
-        header={<h1 className="p-4">Combo Box In Modal</h1>}
+        header={<p className="p-4">Combo Box In Modal</p>}
         isOpen={isOpen}
         onClose={handleClose}
         footer={
